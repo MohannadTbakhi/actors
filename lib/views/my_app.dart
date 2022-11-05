@@ -1,6 +1,7 @@
 part of '../utils/import/app_import.dart';
 
 class MyApp extends StatefulWidget {
+  static const String nameRoute = 'MyAppHome';
   const MyApp({super.key});
 
   @override
@@ -14,11 +15,11 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: const SafeArea(
         child: Scaffold(
-          appBar: HomeAppBar(),
+          appBar: HomeAppBar(title: 'Actors',),
           body: HomeGridView(),
         ),
       ),
-      initialRoute: AppRoutes.initRoute,
+      // initialRoute: AppRoutes.initRoute,
       routes: AppRoutes.routes,
     );
   }

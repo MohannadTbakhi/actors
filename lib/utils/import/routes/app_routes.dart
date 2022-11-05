@@ -4,12 +4,12 @@ class AppRoutes {
   // * Pages  App
   static Map<String, WidgetBuilder> routes = {
     ProfilePage.nameRoute: (context) => const ProfilePage(),
-    // PageHome.nameRoute: (context) => const PageHome(),
+    BigImage.nameRoute: (context) => const BigImage(),
     // PageMyApp.nameRoute: (context) => const PageMyApp(),
   };
 
   // * inti Route
-  static String? get initRoute =>  ProfilePage.nameRoute;
+  static String? get initRoute => BigImage.nameRoute;
 
   // * push Name
   static void go(BuildContext context, String nameRoute) =>

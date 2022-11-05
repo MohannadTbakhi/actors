@@ -1,12 +1,12 @@
 part of '../../../utils/import/app_import.dart';
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const HomeAppBar({super.key});
-
+  const HomeAppBar({super.key, required this.title});
+  final String title;
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: const Text('Actors'),
+      title: Text(title),
       backgroundColor: Colors.black87,
       elevation: 20,
     );

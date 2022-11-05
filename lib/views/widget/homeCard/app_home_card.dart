@@ -6,7 +6,9 @@ class HomeProfileCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        AppRoutes.go(context, ProfilePage.nameRoute);
+      },
       child: Card(
         child: Column(
           children: const [

@@ -17,7 +17,7 @@ class _ProfilePageState extends State<ProfilePage> {
           color: Colors.white,
           child: Column(
             children: const [
-              HomeAppBar(),
+              HomeAppBar(title: 'Info',),
               InfoCard(),
               Expanded(
                 child: InfoGridView(),
