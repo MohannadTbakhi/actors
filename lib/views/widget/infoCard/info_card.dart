@@ -1,7 +1,9 @@
 part of '../../../utils/import/app_import.dart';
 
 class InfoCard extends StatelessWidget {
-  const InfoCard({super.key});
+  const InfoCard({super.key, required this.image, required this.name});
+  final String image;
+  final String name;
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +16,8 @@ class InfoCard extends StatelessWidget {
         children: [
           Expanded(
             flex: 3,
-            child: Image.asset(
-              'assets/images/209536-360-f-364211147-1qglvxv1tcq0ohz3fawufrtonzz8nq3e.jpg',
+            child: Image.network(
+              image,
               fit: BoxFit.fill,
             ),
           ),
@@ -27,19 +29,19 @@ class InfoCard extends StatelessWidget {
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  SizedBox(
+                children:  [
+                  const SizedBox(
                     height: 10,
                   ),
-                  Text('mohannad tbakhi'),
-                  SizedBox(
+                  Text(name),
+                  const SizedBox(
                     height: 10,
                   ),
-                  Text('2016'),
-                  SizedBox(
+                  const Text('2016'),
+                  const SizedBox(
                     height: 10,
                   ),
-                  Text('info')
+                  const Text('info')
                 ]),
           )
         ],

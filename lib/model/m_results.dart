@@ -1,27 +1,21 @@
 part of '../utils/import/app_import.dart';
 
-class Results {
-  String? backdropPath;
-  int? id;
-  String? name;
+class ModelResults {
+  ModelResultsList? allList;
 
-  Results({
-    this.backdropPath,
-    this.id,
-    this.name,
-  });
+  ModelResults({this.allList});
 
-  Results.fromJson(Map<String, dynamic> json) {
-    backdropPath = json[ApiKey.imagePath];
-    id = json[ApiKey.id];
-    name = json[ApiKey.name];
+  ModelResults.fromJson(Map<String, dynamic> json) {
+    allList = json[ApiKey.results] != null
+        ? ModelResultsList.fromJson(json[ApiKey.results])
+        : null;
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
-    data[ApiKey.imagePath] = backdropPath;
-    data[ApiKey.id] = id;
-    data[ApiKey.name] = name;
+    if (allList != null) {
+      data[ApiKey.results] = allList!.toJson();
+    }
     return data;
   }
 }

@@ -10,23 +10,12 @@ class HomeGridView extends StatefulWidget {
 class _HomeGridViewState extends State<HomeGridView> {
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
-      primary: false,
-      padding: const EdgeInsets.all(10),
-      crossAxisSpacing: 10,
-      mainAxisSpacing: 10,
-      crossAxisCount: 2,
-      children: const <Widget>[
-        HomeProfileCard(),
-        HomeProfileCard(),
-        HomeProfileCard(),
-        HomeProfileCard(),
-        HomeProfileCard(),
-        HomeProfileCard(),
-        HomeProfileCard(),
-        HomeProfileCard(),
-        HomeProfileCard(),
-      ],
+    ControllerApi pApi = Provider.of<ControllerApi>(context);
+    ModelResultsList? data = pApi.dataResults?.allList;
+    return ListView.builder(
+      itemCount: data!.results!.length,
+      itemBuilder: (BuildContext context, int index) =>
+          InfoCard(name: dataResults.elementAt(index), image: dataResults.elementAt(index)),
     );
   }
 }

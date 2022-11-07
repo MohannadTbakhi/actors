@@ -11,15 +11,22 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
+    ControllerApi pApi = Provider.of<ControllerApi>(context);
+    ModelResultsList? data = pApi.dataResults?.allList;
     return Material(
       child: SafeArea(
         child: Container(
           color: Colors.white,
           child: Column(
-            children: const [
-              HomeAppBar(title: 'Info',),
-              InfoCard(),
-              Expanded(
+            children: [
+              const HomeAppBar(
+                title: 'Info',
+              ),
+              InfoCard(
+                image: data!.results!.name,
+                name: '${data!.results.name}',
+              ),
+              const Expanded(
                 child: InfoGridView(),
               )
             ],

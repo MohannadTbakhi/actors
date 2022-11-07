@@ -2,12 +2,14 @@ part of '../../../utils/import/app_import.dart';
 
 class InfoGridView extends StatefulWidget {
   const InfoGridView({super.key});
+  
 
   @override
   State<InfoGridView> createState() => _InfoGridViewState();
+  
 }
 
-class _InfoGridViewState extends State<InfoGridView> {
+class _InfoGridViewState extends State<InfoGridView> { 
   @override
   Widget build(BuildContext context) {
     return GridView.count(
@@ -17,17 +19,8 @@ class _InfoGridViewState extends State<InfoGridView> {
       mainAxisSpacing: 10,
       crossAxisCount: 2,
       children: const <Widget>[
-        CardImages(),
-        CardImages(),
-        CardImages(),
-        CardImages(),
-        CardImages(),
-        CardImages(),
-        CardImages(),
-        CardImages(),
-        CardImages(),
-        CardImages(),
-        CardImages(),
+        CardImages(image: '',),
+       
       ],
     );
   }
